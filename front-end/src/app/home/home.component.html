@@ -1,0 +1,62 @@
+<div class="ui content container">
+  <!--
+  <div class="ui raised segment" *ngIf="!isTerminoEncuesta">
+    <h1 class="ui header">Ayudanos</h1>
+    <div class="ui divider"></div>
+    <p *ngIf="!wave">Buscamos gente que nos quiera apoyar con una pequeña encuesta, consiste en marcar los BMP de una cancion de salsa aleatoria. Les agradecemos mucho a la gente que nos apoye.</p>
+    <p *ngIf="wave">De Clic en el boton "Marcar <i class="edit outline icon"></i>" para marcar el Ritmo de la canción. Puede arrastrar la aguja de reproduccion con su mouse al dar clic en ella. Agradecemos que sea lo mas exacto posible en la percepcion del Ritmo de la canción.</p>
+    <div id="waveform"></div>
+    <div id="wave-timeline" style="margin-bottom: 2rem"></div>
+    <ng-container  *ngIf="wave">
+      <button (click)="controlReproduccion()" class="ui labeled icon button">
+        <ng-container *ngIf="isPausado">
+          <i class="play icon"></i>
+          Reproducir
+        </ng-container>
+        <ng-container *ngIf="!isPausado">
+          <i class="pause icon"></i>
+          Pause
+        </ng-container>
+      </button>
+      <button (click)="marcar()" class="ui right labeled icon button">
+        <i class="edit outline icon"></i>
+        Marcar
+      </button>
+      <button (click)="limpiarRegiones()" class="ui right labeled icon button">
+        <i class="trash icon"></i>
+        Eliminar Marcas
+      </button>
+      <button (click)="subirEncuesta()" class="ui right labeled icon button">
+        <i class="cloud upload icon"></i>
+        Terminar Encuesta
+      </button>
+    </ng-container>
+  </div>
+
+  <div class="ui raised segment" *ngIf="isTerminoEncuesta">
+    <h1 class="ui header">Muchas Gracias por tu ayuda. ¿Quieres ayudarnos una vez mas?</h1>
+    <button class="ui button" (click)="reHacerEncuesta()">
+      <i class="redo alternate icon"></i>
+      Volver a hacer encuesta
+    </button>
+  </div>
+
+  <div *ngIf="!wave" class="ui huge button" (click)="onPreviewPressed()">Empezar</div>
+
+  -->
+  <div class="ui raised segment">
+    <h1 class="ui header">Buscador BPM de Salsa</h1>
+    <div class="ui divider"></div>
+    <p>Suba la cancion a la cual quiera allar el BPM</p>
+    <p>Selecionar modelo: </p>
+    <select class="ui fluid dropdown" style="margin-bottom: 2rem" [(ngModel)]="selectedModel">
+      <option value="1">Modelo 1</option>
+      <option value="2">Modelo 2</option>
+      <option value="3">Modelo 3</option>
+    </select>
+    <input type="file" (change)="selectFile($event)" accept=".mp3,.wav">
+    <button type="button" class="ui button" (click)="uploadFile()" style="margin-left: 2rem;">Subir Archivo</button>
+  </div>
+
+</div>
+
